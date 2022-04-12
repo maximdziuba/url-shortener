@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Url shortener</title>
+</head>
+<body>
+<main>
+        <h1>Enter your link</h1>
+        <div>
+            <form action="/" method="post">
+                <label >Enter your link</label>
+                <input type="text" placeholder="Enter your link here" name="link">
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    <div th:if="${shortLink}">
+        <h1>Here is your short link <input class="output-input" type="text" th:value="${shortLink}" id="shortLink"/></h1>
+        <button onclick="copyToClipboard()">Copy</button>
+        <p id="text-copied-paragraph"></p>
+    </div>
+</main>
+</body>
+<style>
+   .output-input {
+        height: 50px;
+        width: 80%;
+   }
+</style>
+<script src="script.js"></script>
+</html>
